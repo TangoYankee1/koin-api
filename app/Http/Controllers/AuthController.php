@@ -13,17 +13,19 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'sometimes|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Password::defaults()],
-            'university_id' => 'required|exists:universities,id',
+            'university_id' => 'sometimes|exists:universities,id',
+            'role' => 'sometimes|in:student,admin',
         ]);
 
         $user = User::create([
-            'name' => $validated['name'],
+            'name' => $validated['name'] ?? $validated['email'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
-            'university_id' => $validated['university_id'],
+            'university_id' => $validated['university_id'] ?? 1,
+            'role' => $validated['role'] ?? 'student',
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;

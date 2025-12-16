@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAnalyticsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CourseHubController;
@@ -31,4 +32,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/chat', [ChatController::class, 'store']);
     Route::get('/chat/{chatSession}', [ChatController::class, 'show']);
     Route::post('/chat/{chatSession}/messages', [ChatController::class, 'storeMessage']);
+
+    Route::get('/admin/stats', [AdminAnalyticsController::class, 'index'])->middleware('admin');
 });
