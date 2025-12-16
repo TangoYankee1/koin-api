@@ -23,6 +23,7 @@ return [
         'https://koin-web-psi.vercel.app',
         'http://localhost:5000',
         'https://koin-d484kv2a2-john-recanils-projects.vercel.app',
+        'https://koin-api.onrender.com',
     ],
 
     'allowed_origins_patterns' => [],
