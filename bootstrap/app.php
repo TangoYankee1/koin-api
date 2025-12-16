@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
 
-        $middleware->append(\Illuminate\Http\Middleware\HandleCors::class);
+        $middleware->append(HandleCors::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
