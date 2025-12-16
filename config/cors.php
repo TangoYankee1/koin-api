@@ -5,11 +5,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:5000',
-        'http://localhost:5173',
-        'http://localhost:3000',
-    ],
+    'allowed_origins' => ['*'],
 
     'allowed_headers' => ['*'],
 
