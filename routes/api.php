@@ -11,13 +11,6 @@ use App\Http\Controllers\UniversityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/whoami' , function () {
-    return response()->json ([
-        'app' => 'THIS IS THE CORRECT LARAVEL APP' ,
-        'path' => base_path (),
-    ]);
-});
-
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 

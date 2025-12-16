@@ -25,8 +25,11 @@ class AuthController extends Controller
             'university_id' => 1, // ✅ Default University of Example
         ]);
 
+        $token = $user->createToken('auth_token')->plainTextToken;
+
         return response()->json([
-            'message' => 'Registered successfully',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
             'user' => $user,
         ], 201);
     }
