@@ -1,13 +1,20 @@
 <?php
 
 return [
-    'paths' => ['api/*'],
-    'allowed_methods' => ['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    'allowed_methods' => ['*'],
+
     'allowed_origins' => [
         'http://localhost:5173',
         'http://localhost:3000',
-        'http://localhost:5000',
     ],
+
     'allowed_headers' => ['*'],
+
+    'exposed_headers' => [],
+
+    'max_age' => 0,
+
     'supports_credentials' => false,
 ];
