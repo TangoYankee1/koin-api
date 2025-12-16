@@ -22,6 +22,7 @@ class AuthController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => bcrypt($validated['password']),
+            'university_id' => 1, // ✅ Default University of Example
         ]);
 
         return response()->json([
