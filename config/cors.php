@@ -19,7 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://koin-web-psi.vercel.app', 'http://localhost:5000'],
+    'allowed_origins' => [
+        'https://koin-web-psi.vercel.app',
+        'http://localhost:5000',
+        'https://koin-d484kv2a2-john-recanils-projects.vercel.app',
+    ],
 
     'allowed_origins_patterns' => [],
 
